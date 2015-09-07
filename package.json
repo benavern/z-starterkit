@@ -1,7 +1,7 @@
 {
-  "name": "honor7",
+  "name": "z starterkit",
   "version": "1.0.0",
-  "description": "my birthday wishlist",
+  "description": "jade sass gulp opinionated starterkit",
   "author": "",
   "dependencies": {
     "gulp": "^3.9.0"
