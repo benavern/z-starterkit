@@ -1,8 +1,10 @@
-var gulp   = require('gulp');
-var del  = require('del');
-var uglify = require('gulp-uglify');
-var sass   = require('gulp-sass');
-var jade   = require('gulp-jade');
+var gulp        = require('gulp');
+var uglify      = require('gulp-uglify')
+var sass        = require('gulp-sass');
+var autoprefix  = require('gulp-autoprefixer');
+var jade        = require('gulp-jade');
+var imagemin    = require('gulp-imagemin');
+var del         = require('del');
 var browserSync = require('browser-sync').create();
 
 
@@ -15,7 +17,8 @@ gulp.task('default', [
 gulp.task('build', [
   'jade',
   'scripts',
-  'styles'
+  'styles',
+  'images'
 ])
 
 // jade templating
@@ -40,9 +43,20 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   gulp.src('dev/css/**/*.sass')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(autoprefix({browsers: ['last 2 versions'], cascade: false}))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 });
+
+// image optimization
+gulp.task('images', function() {
+  return gulp.src('dev/img/*.{png,gif,jpg}')
+    .pipe(imagemin({
+       progressive: true
+    }))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(browserSync.stream());
+})
 
 
 // watch the files
@@ -53,11 +67,12 @@ gulp.task('watch', function() {
   gulp.watch('dev/**/*.jade', ['jade']);
   gulp.watch('dev/js/*.js', ['scripts']);
   gulp.watch('dev/css/**/*.sass', ['styles']);
+  gulp.watch('dev/img/*', ['images']);
 });
 
 
 gulp.task('clean', function() {
-  del.sync('dist/');
+  del.sync(['dist/**/*', 'dist/']);
 });
 
 gulp.task('rebuild', ['clean', 'build']);

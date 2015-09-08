@@ -63,4 +63,5 @@ $RECYCLE.BIN/
 ### Benjamin added these lines :
 node_modules/
 dist/
-**/*.sass-cache/
+.sass-cache/
+.sass-cache/**/*

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
+doctype html
 html(lang="fr")
 head
   meta(charset="UTF-8")
   title Document
   meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0")
   link(rel="stylesheet", href="css/style.css")
-  
+
 body
-  .wrap
-    h1 Hello!
-    include _partials/test_include.jade
-    
+  include _partials/_header.jade
+  include _partials/_about.jade
+  include _partials/_howto.jade
+  //- include _partials/_about.jade
+  //- include _partials/_howto.jade
+
   script(src="js/main.js")

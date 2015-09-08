@@ -1,8 +1,9 @@
 {
-  "name": "z starterkit",
+  "name": "z-starterkit",
   "version": "1.0.0",
   "description": "jade sass gulp opinionated starterkit",
-  "author": "",
+  "author": "http://caradeuc.info",
+  "repository": "https://github.com/benavern/z-starterkit",
   "dependencies": {
     "gulp": "^3.9.0"
   },
@@ -10,6 +11,8 @@
     "browser-sync": "^2.9.1",
     "del": "^2.0.1",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.4.0",

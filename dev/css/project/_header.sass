@@ -1,0 +1,38 @@
+header
+  height: 600px
+  position:relative
+  overflow: hidden
+  margin-bottom:3rem
+  background:
+    color: black
+    image: url(../img/header-bg.jpg)
+    position: center center
+    size: cover
+    repeat: no-repeat
+
+  &:after
+    content:""
+    position: absolute
+    width: 100%
+    bottom:0
+    box-shadow: 0 0 50px 30px $bg
+
+  #title
+    color: white
+    text-shadow:0 0 20px rgba(0,0,0, 0.6)
+    font-size: 6rem
+    font-weight: bold
+    text-align: center
+    height: 100px
+    width: 100%
+    position: absolute
+    top: 50%
+    margin-top: -50px
+
+
+@media(max-width:960px)
+  header
+    height:400px
+
+    #title
+      font-size: 3rem
