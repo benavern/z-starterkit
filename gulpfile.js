@@ -60,7 +60,9 @@ gulp.task('styles', function() {
 gulp.task('images', function() {
   return gulp.src('dev/img/*.{png,gif,jpg}')
     .pipe(imagemin({
-       progressive: true
+      progressive: true,
+      // svgoPlugins: [{removeViewBox: false}],
+      optimizationLevel: 5
     }))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream());

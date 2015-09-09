@@ -3,3 +3,84 @@ footer
     color: #333
   color: #eee
   padding:6rem
+
+  a, a:visited
+    color:white
+
+    &.btn
+      color: $altcolor
+      border: 2px $altcolor solid
+
+      &:hover
+        background-color: $altcolor
+        color: black
+        text-shadow: none
+
+
+
+
+
+  #social-wrapper
+    position:relative
+    width:100%
+    font-size: 0
+
+  .social-btn
+    position:relative
+    display: inline-block
+    width:25%
+    height:0
+    padding-bottom:25%
+    color: white
+    font-weight: lighter
+    font-size: 2rem
+    z-index: 1
+    transform: scale(1)
+    transition: all 0.3s
+
+    &:first-child
+      border-top-left-radius: 0.5rem
+      border-bottom-left-radius: 0.5rem
+
+    &:last-child
+      border-top-right-radius: 0.5rem
+      border-bottom-right-radius: 0.5rem
+
+    &:before
+      position:absolute
+      top:50%
+      left:50%
+      transform:translate(-50%, -50%)
+
+    &:hover
+      text-decoration: none
+      border-radius: 0.5rem
+      transform:scale(1.1)
+      z-index: 5
+
+    &.facebook
+      background: #3b5998
+
+      &:before
+        content:"f"
+
+
+    &.twitter
+      background: #00aced
+
+      &:before
+        content:"t"
+
+
+    &.googlePlus
+      background: #dd4b39
+
+      &:before
+        content:"g+"
+
+
+    &.mail
+      background: #37A02A
+
+      &:before
+        content:"@"

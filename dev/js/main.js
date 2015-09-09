@@ -1,6 +1,7 @@
 (function() {
   scrollingThings();
   smoothScroll();
+  createSocialLinks();
 })();
 
 
@@ -13,10 +14,11 @@ function scrollingThings() {
   window.addEventListener('scroll', function() {
     var wScroll = window.pageYOffset;
 
-    // title scrolling 2 times slower that the page
-    // it fades out when scrolling down
+    // page title effects
     if (wScroll <= titleBottomBox){
+      // title scrolling 2 times slower that the page
       title.style.transform = 'translate(0px, '+ wScroll /2 +'%)';
+      // it fades out when scrolling down
       title.style.opacity = 1/titleBottomBox*(titleBottomBox-wScroll);
     }
 
@@ -31,7 +33,6 @@ function smoothScroll() {
     if(links[i].getAttribute('data-scroll')){
 
       (function(i){
-        // linksScroll.push(links[0]);
         links[i].addEventListener('click', function(e) {
           e.preventDefault();
           var currentPosition = window.pageYOffset;
@@ -73,5 +74,27 @@ function smoothScroll() {
 
     }
   }
+
+}
+
+// social links made easy
+function createSocialLinks() {
+  var here = window.location.href;
+  var URL = {
+    facebook: "http://www.facebook.com/sharer.php?u=" + here,
+    twitter: "https://twitter.com/share?url="+ here +"&text=Just%20found%20something%20awesome!&via=benavern",
+    googlePlus: "https://plus.google.com/share?url=" + here,
+    mail: "mailto:?subject=Just%20found%20something%20awesome!&body=Hey!%20What%20do%20you%20think%20about%20" + here + " ?"
+  }
+  var sp = document.getElementById('social-wrapper');
+
+  for(var x in URL){
+    var el = document.createElement("a");
+    el.title = "Share via " + x;
+    el.className = "social-btn " + x;
+    el.href = URL[x];
+    sp.appendChild(el);
+  }
+
 
 }
