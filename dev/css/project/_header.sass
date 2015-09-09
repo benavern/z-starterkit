@@ -1,36 +1,43 @@
 header
-  height: 600px
+
   position:relative
   overflow: hidden
-  margin-bottom:3rem
+  padding: 20rem 0
   background:
     color: black
-    image: url(../img/header-bg.jpg)
-    position: center center
+    // image: url(../img/header-bg.jpg)
+    image: linear-gradient(45deg, #519A6C 5%, #319A8E 30%, #2949B3)
     size: cover
+    attachment: fixed
     repeat: no-repeat
 
-  &:after
-    content:""
-    position: absolute
-    width: 100%
-    bottom:0
-    box-shadow: 0 0 50px 30px $bg
+
 
   #title
     color: white
     text-shadow:0 0 20px rgba(0,0,0, 0.6)
-    font-size: 6rem
-    font-weight: bold
+    font-size: 5rem
+    // font-weight: bold
+    font-weight: lighter
     text-align: center
-    height: 100px
-    width: 100%
+
+  .arrow-down
+    background:
+      image: url(../img/arrow_down.png)
+      size: contain
+      position: center center
+      repeat: no-repeat
+      color:transparent
+    display: inline-block
     position: absolute
-    top: 50%
-    margin-top: -50px
+    width: 100px
+    height: 100px
+    bottom: 0
+    left: 50%
+    margin-left: -50px
 
 
-@media(max-width:960px)
+@media(max-width:$wrap)
   header
     height:400px
 

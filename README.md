@@ -34,3 +34,4 @@ I think it will be good for a one-page app.
 | `gulp build`  | just build               |
 | `gulp clean`  | delete the `dist` folder |
 | `gulp rebuild`| clean + build            |
+| `gulp jshint` | lint javascript          |

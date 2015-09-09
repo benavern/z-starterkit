@@ -1,0 +1,26 @@
+// simple flex grid system
+.grid
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+  @for $i from 1 through 6
+    & > .grid-#{$i}
+      margin:auto
+      align-items: stretch
+      width: 100%/$i
+
+      .box
+        margin: 1rem
+
+    .order-first
+      order: -1
+
+@media(max-width:$wrap)
+  .grid
+    @for $i from 1 through 6
+      & > .grid-#{$i}
+        width:100%
+
+      .mobile-order-first
+        order: -1

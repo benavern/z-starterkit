@@ -1,5 +1,6 @@
 var gulp        = require('gulp');
-var uglify      = require('gulp-uglify')
+var jshint      = require('gulp-jshint');
+var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
 var autoprefix  = require('gulp-autoprefixer');
 var jade        = require('gulp-jade');
@@ -16,10 +17,11 @@ gulp.task('default', [
 
 gulp.task('build', [
   'jade',
+  'jshint',
   'scripts',
   'styles',
   'images'
-])
+]);
 
 // jade templating
 gulp.task('jade', function() {
@@ -27,6 +29,12 @@ gulp.task('jade', function() {
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.stream());
+});
+
+gulp.task('jshint', function() {
+  return gulp.src('dev/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 })
 
 

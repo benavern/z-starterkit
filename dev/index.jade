@@ -1,16 +1,20 @@
 doctype html
-html(lang="fr")
+html(lang="en")
 head
   meta(charset="UTF-8")
-  title Document
+  title Z StarterKit
   meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0")
   link(rel="stylesheet", href="css/style.css")
 
 body
   include _partials/_header.jade
-  include _partials/_about.jade
-  include _partials/_howto.jade
-  //- include _partials/_about.jade
-  //- include _partials/_howto.jade
+  
+  include _partials/_intro.jade
+  
+  include _partials/_jade.jade
+  include _partials/_sass.jade  
+  include _partials/_gulp.jade
+  
+  include _partials/_footer.jade
 
   script(src="js/main.js")
