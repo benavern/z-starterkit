@@ -85,7 +85,7 @@ function createSocialLinks() {
     twitter: "https://twitter.com/share?url="+ here +"&text=Just%20found%20something%20awesome!&via=benavern",
     googlePlus: "https://plus.google.com/share?url=" + here,
     mail: "mailto:?subject=Just%20found%20something%20awesome!&body=Hey!%20What%20do%20you%20think%20about%20" + here + " ?"
-  }
+  };
   var sp = document.getElementById('social-wrapper');
 
   for(var x in URL){
