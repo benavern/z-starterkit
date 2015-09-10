@@ -1,4 +1,4 @@
-# Z Starter-Kit
+# Z StarterKit
 
 ![screenshot](/screenshot.jpg)
 
