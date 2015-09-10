@@ -1,6 +1,6 @@
 # Z Starter-Kit
 
-__ IN PROGRESS __
+![screenshot](/screenshot.jpg)
 
 ## What's that?
 
