@@ -4,9 +4,6 @@
   "description": "jade sass gulp opinionated starterkit",
   "author": "http://caradeuc.info",
   "repository": "https://github.com/benavern/z-starterkit",
-  "dependencies": {
-    "gulp": "^3.9.0"
-  },
   "devDependencies": {
     "browser-sync": "^2.9.1",
     "del": "^2.0.1",
